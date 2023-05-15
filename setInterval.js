@@ -45,8 +45,8 @@ const intervalId = setInterval(()=>{
     const rgb = `rgb(${red}, ${green}, ${blue})`
     body.style.background = rgb;
 }, 1000)
-console.log(intervalId);
 buttonEl.addEventListener("click", ()=>{
     clearInterval(intervalId);
     buttonEl.textContent = body.style.background;
 })
+console.log(intervalId);
