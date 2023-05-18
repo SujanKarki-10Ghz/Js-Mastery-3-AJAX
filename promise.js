@@ -108,3 +108,25 @@ Promisefunc().then((myFriedRice)=>{
 })
 //output
 //lets eat fried rice
+
+
+/** Promise chaining */
+// Each .then() can return another promise or a value,
+// which can be accessed by the next .then() in the chain.
+const myPromise =()=>{
+    return new Promise ((resolve, reject)=>{
+        resolve("foo");
+    })
+}
+
+myPromise().then((value)=>{
+    console.log(value);
+    value+= "bar";
+    return value; //=> returns promise or value/ if nothing is return then it will automatically return undefined
+}).then((value)=>{ //=> another .then can access the returned promise or value
+    console.log(value);
+    value+= "char";
+    return value;
+}).then((value)=>{
+    console.log(value);
+})
